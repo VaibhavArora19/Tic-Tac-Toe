@@ -1,15 +1,13 @@
 let count = 1;
 let value;
 let winningCombo = [[1, 4, 7], [1, 2, 3], [1, 5, 9], [3, 5, 7], [2, 5, 8], [3, 6, 9], [7, 8, 9], [4, 5, 6]];
-let answer1 = [];
-let answer2 = [];
 let holdValue = [0,0,0,0,0,0,0,0,0];
 let boxNumber;
 let checkCount1 =0;
 let checkCount2 =0;
 
 
-function decideWinner(answer1, answer2, boxNumber, value)
+function decideWinner( boxNumber, value)
 {
     if(holdValue[boxNumber-1] === 0)
     {
@@ -60,10 +58,10 @@ for (let i = 0; i < 9; i++) {
 
         if (count % 2 === 0) {
             value = "X";
-            answer2.push(boxNumber);
+            
         }
         else {
-            answer1.push(boxNumber);
+            
             value = "O";
         }
 
@@ -77,6 +75,6 @@ for (let i = 0; i < 9; i++) {
         if (count === 2) {
             document.querySelector(".points").classList.add("hide");
         }
-         decideWinner(answer1, answer2, boxNumber, value);
+         decideWinner( boxNumber, value);
     });
 }
